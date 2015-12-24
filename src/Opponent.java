@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 /**
- * Created by Franklin on 12/11/2015.
+ * Created by Franklin VN on 12/11/2015.
  */
 public class Opponent {
 
