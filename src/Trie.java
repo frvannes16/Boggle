@@ -17,7 +17,7 @@ public class Trie {
         }
 
         private Node(boolean isWord) {
-            isWord = isWord;
+            this.isWord = isWord;
         }
 
 
