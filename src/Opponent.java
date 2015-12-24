@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Opponent {
 
     private char[][] gameBoard;
-    private Difficulty difficulty; //determines possible word length
+    public Difficulty difficulty; //determines possible word length
     private ArrayList<String> foundWords = new ArrayList<>();
     private int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
     private int[] dy = {-1, 0, 1, -1, 1, -1, 0, 1};
@@ -43,6 +43,10 @@ public class Opponent {
     public boolean updateDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
         return true;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
     }
 
     public boolean newGame(Board board, Difficulty difficulty) {
@@ -96,14 +100,14 @@ public class Opponent {
         }
         if (y - 1 != -1) recursiveWordSearch(x, y - 1, word, visited); //move down
 
-        visited.remove(visited.size()-1);
+        visited.remove(visited.size() - 1);
     /*You'll want to make sure that x-1, x+1, y-1 and y+1 are valid values before
      sending them. */
 
 
     }
 
-    public ArrayList<String> returnWords(){
+    public ArrayList<String> returnWords() {
         return foundWords;
     }
 
