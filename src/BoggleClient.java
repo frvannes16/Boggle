@@ -85,14 +85,14 @@ public class BoggleClient {
         ArrayList<String> userWords = player.returnWords();
         StringBuilder results = new StringBuilder("Opponent            User\n\n");
         ArrayList<String> oppWords = new ArrayList<>();
-        if (opp.difficulty.equals(Difficulty.INSANE)) {
+        if (opp.getDifficulty().equals(Difficulty.INSANE)) {
             oppWords = opp.returnWords(); //All of the words.
         } else {
             Random randomInt = new Random();
             for (String word : opp.returnWords()) {
                 //add according to difficulty: determined by probability
                 int probability = randomInt.nextInt(60);
-                if (probability < opp.difficulty.wordLength) oppWords.add(word);
+                if (probability < opp.getDifficulty().wordLength) oppWords.add(word);
             }
         }
 

@@ -8,11 +8,8 @@ import java.util.ArrayList;
 public class Opponent {
 
     private char[][] gameBoard;
-    public Difficulty difficulty; //determines possible word length
+    private Difficulty difficulty; //determines possible word length
     private ArrayList<String> foundWords = new ArrayList<>();
-    private int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
-    private int[] dy = {-1, 0, 1, -1, 1, -1, 0, 1};
-    private static final int NUM_DIRECTIONS = 8;
 
     private Dictionary dictionary;
 
@@ -58,7 +55,7 @@ public class Opponent {
         //Start the word search at each letter.
         for (int x = 0; x < gameBoard.length; x++) {
             for (int y = 0; y < gameBoard.length; y++) {
-                ArrayList<Pair> visited = new ArrayList<Pair>();
+                ArrayList<Pair> visited = new ArrayList<>();
                 recursiveWordSearch(x, y, "", visited);
             }
         }
